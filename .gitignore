@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.coverage*
+.ruff_cache/
+artifacts/
+benchmark-output/
+results*.jsonl
+results*.jsonl.*
+
+.mypy_cache/

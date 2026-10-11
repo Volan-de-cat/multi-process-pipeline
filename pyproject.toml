@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cv-pipeline-assessment"
+version = "0.1.0"
+description = "Bounded multi-process real-time camera inference pipeline"
+requires-python = ">=3.10"
+dependencies = ["numpy==2.2.6", "opencv-python-headless==5.0.0.93"]
+
+[project.scripts]
+cv-pipeline = "cv_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["cv_pipeline*", "provided"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = ["provided"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "SIM"]
+
+[tool.coverage.run]
+branch = true
+source = ["cv_pipeline"]
+parallel = true
+patch = ["subprocess"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
+
+[tool.coverage.xml]
+output = "artifacts/coverage.xml"
+
+[tool.coverage.html]
+directory = "artifacts/coverage-html"
+
+
+[tool.mypy]
+files = ["src/cv_pipeline", "benchmarks"]
+python_version = "3.10"
+ignore_missing_imports = true
+follow_imports = "silent"
+check_untyped_defs = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+

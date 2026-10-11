@@ -1,0 +1,52 @@
+{
+  "cameras": [
+    {
+      "camera_id": "cam_01",
+      "fps": 15
+    },
+    {
+      "camera_id": "cam_02",
+      "fps": 15
+    },
+    {
+      "camera_id": "cam_03",
+      "fps": 10
+    },
+    {
+      "camera_id": "cam_04",
+      "fps": 10
+    }
+  ],
+  "frame_shape": [
+    2160,
+    3840,
+    3
+  ],
+  "color_order": "RGB",
+  "output_size": [
+    640,
+    480
+  ],
+  "slots_per_camera": null,
+  "result_queue_capacity": 64,
+  "log_queue_capacity": 256,
+  "batch_size": 4,
+  "batch_wait_ms": 50.0,
+  "max_frame_age_ms": 500.0,
+  "reconnect_initial_s": 0.5,
+  "reconnect_max_s": 10.0,
+  "shutdown_timeout_s": 5.0,
+  "health_timeout_s": 5.0,
+  "startup_timeout_s": 15.0,
+  "output_path": null,
+  "preprocessing_threads": 2,
+  "memory_budget_mib": 1024,
+  "output_max_bytes": 268435456,
+  "output_max_files": 1,
+  "output_durable": false,
+  "availability_timeout_s": 30.0,
+  "processing_overlap": false,
+  "frame_policy": "fifo",
+  "output_flush_records": 1,
+  "output_flush_interval_ms": 100.0
+}
